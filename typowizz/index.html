@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Typowizz – Free Typing Speed Test & Games</title>
+<meta name="description" content="Typowizz is a free typing speed test with games, WPM measurement and certificates. No login.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="fx"><i style="left:-80px;top:10%;background:#00b4ff"></i><i style="right:-100px;top:35%;background:#ff4fd8;animation-delay:-3s"></i><i style="left:30%;bottom:-120px;background:#7c5cff;animation-delay:-6s"></i></div>
+<header><nav class="pill"><a class="logo" href="index.html" style="color:var(--tx)">⌨ typowizz</a><span class="links"><a href="index.html" class=on>🏠 Home</a><a href="games.html">🎮 Games</a><a href="about.html">👤 About</a><a href="open-source.html">💻 Open Source</a><a href="terms.html">📜 Terms</a></span></nav></header>
+<main>
+<section class="on">
+  <div class="hero">
+    <div class="keys"><span style="left:4%;top:16%">W</span><span style="right:6%;top:10%;animation-delay:-1.5s">P</span><span style="left:12%;bottom:6%;animation-delay:-3s">M</span><span style="right:10%;bottom:12%;animation-delay:-2s">⚡</span></div>
+    <span class="tag">✦ Free · No login · Open source</span>
+    <h1>Type faster.<br><em>Think sharper.</em></h1>
+    <p>Typowizz is a free, futuristic typing playground. Measure your speed, train your accuracy and play games that make practice fun.</p>
+    <div class="cta"><button class="btn pri" id="toType">⌨ Start typing test</button><a class="btn" href="games.html">🎮 Play games</a></div>
+  </div>
+
+  <div class="card">
+    <h2>About Typowizz</h2>
+    <p>Typowizz is a small, fast website built for one thing: helping you type better. You can take a classic typing speed test with real paragraphs and essays, see your words per minute (WPM) and accuracy live, and then train with arcade-style typing games.</p>
+    <p>There are no accounts, no passwords and no ads. Open the page and start typing. Your best scores are stored only on your own device, and the whole project is open source so anyone can read it, improve it or make their own copy.</p>
+    <div class="grid" style="margin-top:18px">
+      <div class="card hov"><div class="ic">⏱</div><h3>Real WPM</h3><p>Live words per minute and accuracy as you type, using the standard 5-characters-per-word rule.</p></div>
+      <div class="card hov"><div class="ic">📝</div><h3>Paragraphs & essays</h3><p>Short paragraphs or longer essays at easy, medium or hard level, picked at random.</p></div>
+      <div class="card hov"><div class="ic">🎮</div><h3>4 typing games</h3><p>Word Rain, Speed Burst, Scramble Dash and Letter Blitz, each with levels and timers.</p></div>
+      <div class="card hov"><div class="ic">🔒</div><h3>Private by design</h3><p>No login and no tracking. Scores stay in your browser.</p></div>
+      <div class="card hov"><div class="ic">📱</div><h3>Works everywhere</h3><p>Light, quick and responsive on laptops, tablets and phones.</p></div>
+      <div class="card hov"><div class="ic">💜</div><h3>Open source</h3><p>MIT licensed. Fork it, learn from it, make it better.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="step"><span class="num">01</span><div><b>Choose</b><br><span class="mut">Pick paragraph or essay, a level and a time.</span></div></div>
+      <div class="step"><span class="num">02</span><div><b>Type</b><br><span class="mut">The timer starts on your first key. Green is right, red is a miss.</span></div></div>
+      <div class="step"><span class="num">03</span><div><b>Improve</b><br><span class="mut">Beat your best WPM, then warm up with a game.</span></div></div>
+    </div>
+    <p><b>Tips:</b> keep your wrists relaxed, look at the screen not the keys, and aim for accuracy first. Speed follows.</p>
+  </div>
+
+  <div class="card" id="typing">
+    <div id="setup">
+      <h2>Start a typing test</h2>
+      <div class="row"><span class="lbl">1. Choose</span><span class="seg" id="kd"></span></div>
+      <div class="row"><span class="lbl">2. Level</span><span class="seg" id="lvl"></span></div>
+      <div class="row"><span class="lbl">3. Time</span><span class="seg" id="tm"></span></div>
+      <button class="btn pri" id="go">Start ▶</button>
+    </div>
+    <div id="play" hidden>
+      <div class="stats">
+        <div class="stat"><b id="sW">0</b><span>WPM</span></div><div class="stat"><b id="sA">100%</b><span>Accuracy</span></div>
+        <div class="stat"><b id="sT">60</b><span>Seconds</span></div><div class="stat"><b id="sB">–</b><span>Best WPM</span></div>
+      </div>
+      <div id="txt"></div>
+      <textarea id="ta" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Type the text above"></textarea>
+      <div class="hint">⌨ Click the text and just start typing. The timer starts with your first key.</div>
+      <div class="row" style="margin-top:14px"><button class="btn pri" id="new">↻ Restart (new text)</button><button class="btn" id="back">Change settings</button><span class="mut">Esc restarts</span></div>
+    </div>
+  </div>
+</section>
+</main>
+<div id="modal" hidden><div class="mcard" id="mc"></div></div>
+<footer>© 2026 Typowizz · MIT licensed · Built by <a href="https://github.com/bitqwel" target="_blank" rel="noopener">@bitqwel</a></footer>
+<script src="js/common.js"></script>
+<script src="js/typing.js"></script>
+</body>
+</html>
